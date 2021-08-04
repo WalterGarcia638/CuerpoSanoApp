@@ -1,0 +1,81 @@
+<button class="btn btn-primary" style="margin-top: 10px; margin-left: 10px;" (click)="abrirModal(modalEjercicio)">Agregar ejercicio</button>
+<button class="btn btn-primary" style="margin-top: 10px; margin-left: 10px;" (click)="getEjercicio()">Probar metodo</button>
+
+<ng-template #modalEjercicio let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">Ingrese los datos</h4>
+        <button class="close" aria-label="close" type="button" (click)="modal.dismiss()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    </div>
+    <div class="modal-body">
+
+        <form [formGroup]="form_Ejercicios" (ngSubmit)="agregar()">
+
+            <div class="form-group">
+                <label class="col-form-label">Nombre Ejercicio</label>
+                <input type="text" class="form-control" formControlName="NombreEjercicio">
+            </div>
+
+            <div class="form-group">
+                <label class="col-form-label">Descripcion</label>
+                <input type="text" class="form-control" formControlName="Descripcion">
+            </div>
+
+            <div class="form-group">
+                <label class="col-form-label">Recomendaciones</label>
+                <input type="text" class="form-control" formControlName="Recomendaciones">
+            </div>
+
+            <div class="form-group">
+                <label class="col-form-label">Musculo Trabajado</label>
+                <input type="text" class="form-control" formControlName="MusculoTrabajado">
+            </div>
+
+            <div class="form-group">
+                <label class="col-form-label">Musculos Secundarios</label>
+                <input type="text" class="form-control" formControlName="MusculosSecundario">
+            </div>
+
+            <div class="form-group">
+                <label class="col-form-label">UrlFoto</label>
+                <input type="text" class="form-control" formControlName="UrlFoto">
+            </div>
+
+            <div class="form-group">
+                <label class="col-form-label">UrlFoto</label>
+                <input type="text" class="form-control" formControlName="UrlVideo">
+            </div>
+
+            <div class="form-group">
+                <label class="col-form-label">Repeticiones Recomendadas</label>
+                <input type="text" class="form-control" formControlName="RepeticionesRecomendadas">
+            </div>
+
+            <div class="form-group">
+                <label class="col-form-label">Tiempo Recomendado</label>
+                <input type="number" class="form-control" formControlName="TiempoRecomendado">
+            </div>
+
+
+
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <button type="submit" class="btn btn-success  btn-block">guardar</button>
+                    </div>
+
+                    <div class="col">
+                        <button type="button" class="btn btn-danger btn-block" (click)="modal.close()">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+
+
+    </div>
+    <div class="modal-footer">
+
+    </div>
+</ng-template>

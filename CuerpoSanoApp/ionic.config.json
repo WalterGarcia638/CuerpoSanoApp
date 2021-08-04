@@ -1,0 +1,7 @@
+{
+  "name": "CuerpoSanoApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
